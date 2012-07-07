@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orderingFromXml="true">
+	
+	<PreferenceCategory android:title="Preferences">
+
+		<ListPreference android:title="Main mode" android:key="mode"
+			android:defaultValue="Touch" android:entries="@array/modes"
+			android:entryValues="@array/modes" />
+			
+		<PreferenceScreen android:title="Shortcut preferences">
+		
+			<CheckBoxPreference android:title="Status bar shortcut"
+				android:defaultValue="true" android:summaryOn="Shortcut enabled."
+				android:summaryOff="Shortcut disabled." android:key="shortcut" />
+
+			<CheckBoxPreference android:title="Visible status bar icon"
+				android:defaultValue="true" android:key="iconVisible"
+				android:dependency="shortcut" />
+
+			<CheckBoxPreference android:title="Invert status bar icon"
+				android:defaultValue="false" android:key="iconInverted"
+				android:dependency="iconVisible" />
+
+		</PreferenceScreen>
+			
+		<PreferenceScreen android:title="Touch Mode preferences">
+					
+			<PreferenceScreen android:title="Overlay preferences">
+					
+				<com.DanGirshovich.T4B.Settings.HeightPreference
+					android:key="heightPortrait" android:title="Height for portrait"
+					android:summary="Percent of the screen to use."
+					android:defaultValue="70" android:max="90" android:negativeButtonText="@null"/>
+
+				<com.DanGirshovich.T4B.Settings.HeightPreference
+					android:key="heightLandscape" android:title="Height for landscape"
+					android:summary="Percent of the screen to use."
+					android:defaultValue="70" android:max="90" android:negativeButtonText="@null"/>
+					
+			    <PreferenceCategory android:title="Brightness">
+					
+				<com.DanGirshovich.T4B.Settings.SeekBarPreference
+					android:key="sliderAlpha" android:title="Slide area transparency"
+					android:summary="The higher the value, the more invisible."
+					android:defaultValue="100" android:max="100" />
+					
+		        <ListPreference
+			           android:title="Slide area color"
+			           android:key="sliderColor"
+			           android:defaultValue="blue"
+			           android:entries="@array/colors"
+			           android:entryValues="@array/colors" />  
+			    </PreferenceCategory>  
+			  
+			    <PreferenceCategory android:title="Volume">
+			           
+			    <CheckBoxPreference android:title="Volume buttons"
+					android:defaultValue="false" android:summaryOn="Adds volume buttons."
+					android:key="volume" /> 
+					
+				<CheckBoxPreference android:title="Show level"
+					android:defaultValue="true" android:summaryOn="Level display and sound are on."
+					android:summaryOff="Level display and sound are off."
+					android:key="showVolLevel" android:dependency = "volume" /> 
+					
+				<CheckBoxPreference android:title="Border and signs"
+					android:defaultValue="true" android:summary="Set transparency below."
+					android:dependency = "volume" android:key="borderAndSigns" />
+								           
+	            <com.DanGirshovich.T4B.Settings.SeekBarPreference
+					android:key="volSliderAlpha" android:title="Volume button transparency"
+					android:summary="The higher the value, the more invisible."
+					android:defaultValue="100" android:max="100"
+					android:dependency = "volume" />
+					
+		        <ListPreference
+			           android:title="Volume slide area color"
+			           android:key="volSliderColor"
+			           android:defaultValue="magenta"
+			           android:entries="@array/colors"
+			           android:entryValues="@array/colors" 
+			           android:dependency = "volume" />    
+		           		
+	       		 </PreferenceCategory>
+	       		 
+     		</PreferenceScreen>
+		     
+		     <CheckBoxPreference android:title="Lefty mode"
+				android:defaultValue="false" android:summaryOn="Slide area on the left."
+				android:summaryOff="Slide area on the right."
+				android:key="lefty" />  
+					
+			<CheckBoxPreference android:title="Lock orientation"
+				android:defaultValue="false" android:summaryOn="Screen layout won't change while adjusting."
+				android:summaryOff="Screen layout may change while adjusting."
+				android:key="lockLayoutTouch" />
+
+			<Preference android:title="Touch test" android:key="touchTest"
+				android:summary="Starts Touch Mode." />
+
+		</PreferenceScreen>
+
+		<PreferenceScreen android:title="Tilt Mode preferences">
+
+			<CheckBoxPreference android:title="Lock orientation"
+				android:defaultValue="true"
+				android:summaryOn="Screen layout won't change while tilting."
+				android:summaryOff="Screen layout may change while tilting."
+				android:key="lockLayoutTilt" />
+
+			<CheckBoxPreference android:title="End on tap"
+				android:defaultValue="true" android:summaryOn="End when you tap screen or press back key."
+				android:summaryOff="Press back key to quit." android:key="endOnTapTilt" />
+
+			<com.DanGirshovich.T4B.Settings.SensitivityPreference
+				android:key="tiltSensitivity" android:title="Tilt sensitivity"
+				android:summary="The higher the value, the less you need to tilt."
+				android:defaultValue="49" android:max="99" android:negativeButtonText="@null" />
+
+			<Preference android:title="Tilt test" android:key="tiltTest"
+				android:summary="Starts Tilt Mode." />
+
+		</PreferenceScreen>
+
+		<CheckBoxPreference android:title="Show percentage"
+			android:defaultValue="true" android:key="showToast" />
+
+		<CheckBoxPreference android:title="Show helpful hints"
+			android:defaultValue="true" android:key="showHints" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="More info">
+		<Preference android:title="Help" android:key="help"
+			android:summary="A short user guide." />
+		<Preference android:title="About" android:key="about"
+			android:summary="@string/app_info" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

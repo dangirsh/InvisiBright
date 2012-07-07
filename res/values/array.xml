@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="modes">
+   <item>Tilt</item>
+   <item>Touch</item>
+</string-array>
+
+<string-array name="colors">
+	<item>red</item>
+    <item>yellow</item>
+    <item>green</item>
+    <item>blue</item>
+    <item>magenta</item>
+    <item>black</item>
+	<item>white</item> 
+	<item>cyan</item>
+</string-array>
+
+<string-array name="color_values">
+	<item>#FF0000</item>
+    <item>#FFFF00</item>
+    <item>#00FF00</item>
+    <item>#0000FF</item>
+    <item>#FF00FF</item>
+    <item>#000000</item>
+	<item>#FFFFFF</item> 
+	<item>#00FFFF</item>
+</string-array>
+
+</resources>

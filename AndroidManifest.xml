@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.DanGirshovich.T4B" android:versionCode="24"
+	android:versionName="3.3">
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-sdk android:minSdkVersion="8" />
+
+	<uses-feature android:name="android.hardware.sensor.accelerometer"
+		android:required="false" />
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+				
+		<activity android:name="com.DanGirshovich.T4B.MainChooser"
+			android:label="@string/app_name" android:theme="@style/Theme.Transparent"
+			android:clearTaskOnLaunch="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<action android:name="com.DanGirshovich.T4B.START_TOUCH" />
+				<action android:name="com.DanGirshovich.T4B.START_TILT" />
+				<action android:name="android.intent.action.SEARCH_LONG_PRESS" />
+				<category android:name="android.intent.category.LAUNCHER" />			
+				<category android:name="android.intent.category.DEFAULT" />								
+			</intent-filter>
+		</activity>		
+		
+		<activity android:name="com.DanGirshovich.T4B.MainTouch"
+			android:label="@string/touch_mode" android:theme="@style/Theme.Transparent"
+			android:clearTaskOnLaunch="true" android:configChanges="orientation">
+			<intent-filter>
+				<action android:name="android.intent.action.CREATE_SHORTCUT" />							
+			</intent-filter>
+		</activity>
+
+		<activity android:name="com.DanGirshovich.T4B.MainTilt"
+			android:label="@string/tilt_mode" android:theme="@style/Theme.Transparent"
+			android:clearTaskOnLaunch="true" android:configChanges="orientation">
+			<intent-filter>
+				<action android:name="android.intent.action.CREATE_SHORTCUT" />							
+			</intent-filter>
+		</activity>
+
+		<activity android:name="com.DanGirshovich.T4B.Settings.Settings" android:clearTaskOnLaunch="true"
+			android:configChanges="orientation">
+		</activity>
+
+		<receiver android:name="com.DanGirshovich.T4B.NotificationHandler"
+			android:enabled="true" android:exported="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="com.DanGirshovich.T4B.UPDATE_NOTIFICATION" />
+			</intent-filter>
+		</receiver>
+	
+	</application>
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+</manifest> 

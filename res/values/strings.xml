@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">InvisiBright Pro</string>
+	<string name="about">Developed by Dan Girshovich\nArtwork by
+		Rose Wang\n</string>
+	<string name="app_info">InvisiBright Info</string>
+	<string name="help">1. Make sure the status bar shortcut is enabled
+		under \"Shortcut preferences\".\n2. To start InvisiBright, pull down
+		your
+		status bar while using any application and select the InvisiBright
+		shortcut.\n3. If you are using Tilt Mode, tilt your phone forward to
+		increase brightness or back to decrease brightness.\n4. If you are
+		using
+		Touch Mode, drag your finger up and down across the right side of the screen
+		to adjust brightness.\n5. Quit either mode with the back key
+		or a tap
+		on the screen (on the left side for Touch Mode).\n6. Email
+		dan.girsh@gmail.com
+		with questions or comments.
+		
+	</string>
+
+	<string name="settings_label">InvisiBright Settings</string>
+	<string name="tilt_title">InvisiBright: Tilt Mode</string>
+	<string name="touch_title">InvisiBright: Touch Mode</string>
+	<string name="tilt_summary">Select to start Tilt Mode</string>
+	<string name="touch_summary">Select to start Touch Mode</string>
+	<string name="touch_mode">Touch Mode</string>
+	<string name="tilt_mode">Tilt Mode</string>
+	<string name="tilt_hint1">Tap anywhere to end Tilt Mode</string>
+	<string name="tilt_hint2">Press back key to end Tilt Mode</string>
+	<string name="touch_hint1">Touching left side ends Touch Mode</string>	
+	<string name="touch_hint2">Press back key to end Touch Mode</string>	
+	
+	
+</resources>
